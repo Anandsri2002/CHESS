@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.chess-board {
+  width: 480px;
+  height: 480px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.white {
+  background-color: #f0d9b5;
+}
+
+.black {
+  background-color: #b58863;
+}
+
+.piece {
+  width: 80%;
+  height: 80%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: grab;
+  z-index: 10;
+}
+
+.piece:active {
+  cursor: grabbing;
+}
+
+.coordinates {
+  position: absolute;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.rank {
+  left: 2px;
+  top: 2px;
+}
+
+.file {
+  right: 2px;
+  bottom: 2px;
+}
+
+.white-coord {
+  color: #f0d9b5;
+}
+
+.black-coord {
+  color: #b58863;
+}
+
+.highlight {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.possible-move {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  z-index: 5;
+}
